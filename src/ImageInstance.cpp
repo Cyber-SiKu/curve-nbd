@@ -87,5 +87,9 @@ ImageInstance::~ImageInstance() {
     }
 }
 
+void ImageInstancePile::AioWrite(NebdClientAioContext* context) {
+    nebd_lib_aio_pile_pwrite(fd_, context);
+}
+
 }  // namespace nbd
 }  // namespace curve

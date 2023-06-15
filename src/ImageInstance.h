@@ -96,6 +96,15 @@ class ImageInstance {
 };
 using ImagePtr = std::shared_ptr<ImageInstance>;
 
+class ImageInstancePile : public ImageInstance {
+ public:
+    /**
+     * @brief async write request
+     * @param context write request information
+     */
+    void AioWrite(NebdClientAioContext* context) override;
+};
+
 }  // namespace nbd
 }  // namespace curve
 
